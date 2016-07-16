@@ -18,5 +18,5 @@ def is_unique(string):
 if __name__ == '__main__':
     test_words = ['abcd', 'abac', 'abca']
     for test_word in test_words:
-        result = unique(test_word)
+        result = is_unique(test_word)
         print(result)
