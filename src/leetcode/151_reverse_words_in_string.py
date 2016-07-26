@@ -14,10 +14,6 @@ class Solution(object):
         :type s: str
         :rtype str
         """
-        # new_list_s = []
-        # list_s = s.split(' ')
-        # for word in reversed(list_s):
-        #     new_list_s.append(word)
         list_s = reversed(s.split(' '))
         result = ' '.join(list_s)
 
