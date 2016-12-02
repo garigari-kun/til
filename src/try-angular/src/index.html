@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app = "">
+<html lang="en" ng-app = "try">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,8 @@
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
     <script src = "./js/app/app.module.js"></script>
     <script src = "./js/app/app.config.js"></script>
+    <script src = "./js/app/blog-list/blog-list.module.js"></script>
+    <script src = "./js/app/blog-list/blog-list.component.js"></script>
     <style>
     .new-class {
       font-size: 72px;
@@ -24,13 +26,22 @@
     </style>
   </head>
   <body>
-    <h1 class = "new-class" ng-class = "{'other-class': name == 'keisuke', 'new-class2': font == 120}">
+    <!-- <h1 class = "new-class" ng-class = "{'other-class': name == 'keisuke', 'new-class2': font == 120}">
       Hello,
       <span ng-if = "name">{{ name }}</span>
       <span ng-if = "!name">world</span>
       !
     </h1>
     <input type = "text" ng-model = "name"><br />
-    <input type = "text" ng-model = "font" placeholder = "font">
+    <input type = "text" ng-model = "font" placeholder = "font"> -->
+
+    <!-- <div class = "" ng-controller = "BlogListController">
+      <h1 class = "new-class">{{ title }}</h1>
+      <button ng-click = "someClickTest()">Click me!</button>
+    </div> -->
+
+    <blog-list></blog-list>
+
+
   </body>
 </html>

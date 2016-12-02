@@ -1,3 +1,3 @@
-'user strict';
+'use strict';
 
 angular.module('blogList', []);
