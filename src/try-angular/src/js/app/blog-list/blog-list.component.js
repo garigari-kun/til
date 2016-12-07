@@ -13,11 +13,24 @@
 
 angular.module('blogList').
   component('blogList', {
-    //template: '<div class = ""><h1 class = "new-class">{{ title }}</h1><button ng-click = "someClickTest()">Click me!</button></div>',
     templateUrl: '/templates/blog-list.html',
     controller: function($scope) {
-      console.log("hello");
+      var blogItems = [
+        {'title': 'title1','id': 1,'description': 'desc1', 'publish': '2016-12-04'},
+        {'title': 'title2','id': 2,'description': 'desc2'},
+        {'title': 'title3','id': 3,'description': 'desc3'},
+        {'title': 'title4','id': 4,'description': 'desc4'},
+      ]
+
+      // var test = [
+      //   {title: 'title1',id: 1,description: 'desc1'},
+      // ]
+
+      $scope.items = blogItems;
+
+
       $scope.title = 'Hi there';
+
       $scope.clicks = 0;
       $scope.someClickTest = function() {
         $scope.clicks += 1;
