@@ -1,15 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
-from .models import Tweet
+from django.views.generic import ListView, DetailView, CreateView
 
-# def tweet_list_view(request):
-#     template_name = 'tweets/tweet_list.html'
-#     queryset = Tweet.objects.all()
-#     context = {
-#         'object_list': queryset
-#     }
-#     return render(request, template_name, context)
-#
+
+from .models import Tweet
+from .forms import TweetModelForm
+
 
 def tweet_detail_view(request, pk=None):
     template_name = 'tweets/tweet_detail.html'
@@ -32,6 +27,27 @@ class TweetListView(ListView):
 class TweetDetailView(DetailView):
     queryset = Tweet.objects.all()
     template_name = 'tweets/tweet_detail.html'
-    #
-    # def get_object(self):
-    #     return Tweet.objects.get(id=1)
+
+
+class TweetCreateView(CreateView):
+    form_class = TweetModelForm
+    template_name = 'tweets/create_view.html'
+    success_url = '/tweets/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(TweetCreateView, self).form_valid(form)
+
+
+def tweet_create_view(request):
+    form = TweetModelForm(request.POST or None)
+    template_name = 'tweets/create_view.html'
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.user = request.user
+        instance.save()
+    context = {
+        'form': form,
+    }
+
+    return render(request, template_name, context)
