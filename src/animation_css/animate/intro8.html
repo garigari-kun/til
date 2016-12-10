@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang = "ja">
+    <head>
+        <meta charset = "utf-8">
+        <style>
+
+        body {
+            background-color: #FFF;
+            padding: 50px;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #0099FF;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translate3d(0px, 0px, 0px);
+            }
+            50% {
+                transform: translate3d(800px, 0px, 0px);
+            }
+            100% {
+                transform: translate3d(0px, 0px, 0px);
+            }
+        }
+
+        #myCircle {
+            animation: slide 5s infinite;
+        }
+        </style>
+    </head>
+    <body>
+        <div id = "myCircle" class = "circle"></div>
+        <!-- <script src = "http://www.kirupa.com/js/prefixfree.min.js"></script> -->
+    </body>
+</html>

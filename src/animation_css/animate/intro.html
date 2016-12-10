@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang = "ja">
+    <head>
+        <meta charset = "utf-8">
+        <style>
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+            animation: square-to-circle 3s 1s infinite cubic-bezier(1,.015,.295,1.225) alternate;
+        }
+
+        @-webkit-keyframes tutsFade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @-moz-keyframes tutsFade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @-ms-keyframes tutsFade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @-o-keyframes tutsFade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes tutsFade {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        /*
+        You can also write like these
+        @keyframes tutsFade {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        */
+
+        @keyframes tutsRotate {
+            to {
+                transform: rotate(180deg);
+            }
+        }
+
+        @keyframes square-to-circle {
+            0% {
+                border-radius: 0 0 0 0;
+                background: coral;
+                transform:rotate(0deg);
+            }
+            25% {
+                border-radius: 50% 0 0 0;
+                background: darksalmon;
+                transform:rotate(45deg);
+            }
+            50% {
+                border-radius: 50% 50% 0 0;
+                background: indianred;
+                transform:rotate(90deg);
+            }
+            75% {
+                border-radius: 50% 50% 50% 0;
+                background: lightcoral;
+                transform:rotate(135deg);
+            }
+            100% {
+                border-radius: 50%;
+                background: darksalmon;
+                transform:rotate(180deg);
+            }
+        }
+
+        /*
+        .element {
+            animation-name: tutsFade;
+            animation-duration: 4s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: alternate;
+        }
+        */
+
+        /* shorthand*/
+        .element {
+            /*animation: tutsFade 4s 1s infinite linear alternate;*/
+            -webkit-animation: tutsFade 4s 1s infinite linear alternate;
+            -moz-animation: tutsFade 4s 1s infinite linear alternate;
+            -ms-animation: tutsFade 4s 1s infinite linear alternate;
+            -o-animation: tutsFade 4s 1s infinite linear alternate;
+            animation:
+                tutsFade 4s 1s infinite linear alternate;
+                tutsRotate 4s 1s infinite linear alternate;
+
+        }
+        </style>
+    </head>
+    <body>
+        <h3>CSS3 animation intro</h3>
+        <div>
+
+        </div>
+    </body>
+</html>
