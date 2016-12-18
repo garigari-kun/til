@@ -1,5 +1,6 @@
-<form method = "POST" action = "">
+<!-- <form method = "POST" action = "">
   {% csrf_token %}
   {{ form.as_p }}
   <input type = "submit" value = "Tweet">
-</form>
+</form> -->
+{% include 'tweets/form.html' with form=form btn_title='Tweet' %}
