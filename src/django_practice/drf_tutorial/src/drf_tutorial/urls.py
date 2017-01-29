@@ -15,8 +15,34 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from snippets.api.views import SnippetViewSet, UserViewSet
+from rest_framework.routers import DefaultRouter
+
+
+user_list = UserViewSet.as_view(
+    {
+        'get': 'list'
+    }
+)
+
+user_detail = UserViewSet.as_view(
+    {
+        'get': 'retrieve'
+    }
+)
+
+router = DefaultRouter()
+router.register(r'api/snippets', SnippetViewSet)
+router.register(r'api/users', UserViewSet)
+
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'snippets/api/', include('snippets.urls')),
+    url(r'^', include(router.urls)),
+    # url(r'^$', api_root),
+    # url(r'^api/snippets/', include('snippets.urls')),
+    # url(r'^api/users/$', user_list, name='user-list'),
+    # url(r'^api/users/(?P<pk>[0-9]+)/$', user_detail, name='user-detail'),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
