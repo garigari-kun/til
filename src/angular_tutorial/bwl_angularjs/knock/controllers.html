@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial Angular</title>
+    <!-- <script src = "./js/angular.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+
+    <script src="invoice1.js"></script>
+  </head>
+  <body>
+    <div ng-app="invoice1" ng-controller="InvoiceController as invoice">
+      <div>
+        Quantity: <input type="number" min="0" ng-model="invoice.qty" required>
+      </div>
+      <div>
+        Costs: <input type="number" min="0" ng-model="invoice.cost" required>
+        <select ng-model="invoice.inCurr">
+          <option ng-repeat="c in invoice.currencies">{{ c }}</option>
+        </select>
+      </div>
+      <div>
+        Total:
+        <span ng-repeat="c in invoice.currencies">
+          {{ invoice.total(c) | currency:c }}
+        </span><br />
+        <button class="btn" ng-click="invoice.pay()">Pay</buton>
+      </div>
+    </div>
+
+
+  </body>
+</html>
