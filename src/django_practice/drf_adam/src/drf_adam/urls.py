@@ -20,5 +20,6 @@ from animals.api.urls import router as animal_routers
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/kittens', include(animal_routers.urls)),
+    url(r'^api/kittens/', include(animal_routers.urls)),
+    url(r'^api/puppies/', include('animals.api.urls')),
 ]
