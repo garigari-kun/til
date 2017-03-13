@@ -1,0 +1,10 @@
+Object Oriented Programming
+
+
+- A Class
+A blueprint for an object.
+Think of a class as a factor for creating objects
+
+
+
+- Objects
