@@ -1,5 +1,10 @@
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-</form>
+{% extends 'articles/articles_base.html' %}
+
+{% block container %}
+  <h3 class="title">Create New Article</h3>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input class="btn" type="submit" value="Create" />
+  </form>
+{% endblock %}

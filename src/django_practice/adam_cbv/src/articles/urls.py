@@ -5,14 +5,19 @@ from .views import (
     article_detail,
     article_create,
     article_update,
-    article_delete
+    article_delete,
+    BlogHomeListView,
+    ArticleDetailView,
+    ArticleCreateView,
+    ArticleUpdateView,
+    ArticleDeleteView
 )
 
 
 urlpatterns = [
-    url(r'^$', blog_home, name='blog-home'),
-    url(r'^(?P<pk>\d+)/$', article_detail, name='article-detail'),
-    url(r'^create/$', article_create, name='article-create'),
-    url(r'^(?P<pk>\d+)/update$', article_update, name='article-update'),
-    url(r'^(?P<pk>\d+)/delete$', article_delete, name='article-delete'),
+    url(r'^$', BlogHomeListView.as_view(), name='blog-home'),
+    url(r'^(?P<pk>\d+)/$', ArticleDetailView.as_view(), name='article-detail'),
+    url(r'^create/$', ArticleCreateView.as_view(), name='article-create'),
+    url(r'^(?P<pk>\d+)/update$', ArticleUpdateView.as_view(), name='article-update'),
+    url(r'^(?P<pk>\d+)/delete$', ArticleDeleteView.as_view(), name='article-delete'),
 ]

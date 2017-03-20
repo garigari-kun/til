@@ -2,9 +2,16 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponseRedirect
+from django.views.generic import ListView, RedirectView, DetailView, CreateView, UpdateView, DeleteView
 
 from .forms import ArticleModelForm
 from .models import Article
+
+
+
+class BlogHomeListView(ListView):
+    model = Article
+    template_name = 'articles/articles_home.html'
 
 
 
@@ -17,6 +24,18 @@ def blog_home(request):
     return render(request, template_name, context)
 
 
+
+class BlogHomeRedirectView(RedirectView):
+    url = reverse_lazy('blog-home')
+
+
+
+class ArticleDetailView(DetailView):
+    model = Article
+    template_name = 'articles/article.html'
+
+
+
 def article_detail(request, pk):
     template_name = 'articles/article.html'
     article = Article.objects.get(pk=pk)
@@ -24,6 +43,16 @@ def article_detail(request, pk):
         'article': article
     }
     return render(request, template_name, context)
+
+
+
+class ArticleCreateView(CreateView):
+    template_name = 'articles/article_create.html'
+    form_class = ArticleModelForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(ArticleCreateView, self).form_valid(form)
 
 
 def article_create(request):
@@ -47,6 +76,13 @@ def article_create(request):
 
 
 
+class ArticleUpdateView(UpdateView):
+    model = Article
+    form_class = ArticleModelForm
+    template_name = 'articles/article_update.html'
+
+
+
 def article_update(request, pk):
     template_name = 'articles/article_update.html'
     article = Article.objects.get(pk=pk)
@@ -67,6 +103,12 @@ def article_update(request, pk):
     }
 
     return render(request, template_name, context)
+
+
+class ArticleDeleteView(DeleteView):
+    model = Article
+    success_url = reverse_lazy('blog-home')
+
 
 
 
