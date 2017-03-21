@@ -1,0 +1,11 @@
+- Installed package list
+
+cat /etc/app/sources.list
+
+
+sudo apt-get update
+sudo apt-get upgrade
+
+
+- Installed app called 'finger'
+sudo apt-get install finger
