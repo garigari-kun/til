@@ -9,3 +9,22 @@ sudo apt-get upgrade
 
 - Installed app called 'finger'
 sudo apt-get install finger
+
+
+- List all the user
+finger
+
+- See the detail of the specific user
+finger <username>
+
+- Add user
+sudo adduser <username>
+
+
+
+- Login as a specific user
+ssh <username>@127.0.0.1 -p 2222
+
+
+- Check vagrant port
+vagrant port
