@@ -28,3 +28,12 @@ ssh <username>@127.0.0.1 -p 2222
 
 - Check vagrant port
 vagrant port
+
+
+- sudoers
+sudo ls /etc/sudoers.d
+sudo vi /etc/sudoers.d/<username>
+
+
+- Password expiration
+sudo passwd -e <username>
