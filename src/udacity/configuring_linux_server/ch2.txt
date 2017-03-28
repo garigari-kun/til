@@ -37,3 +37,19 @@ sudo vi /etc/sudoers.d/<username>
 
 - Password expiration
 sudo passwd -e <username>
+
+- generating key pair
+ssh-keygen
+
+- ssh settings for server
+mkdir .ssh
+touch .ssh/authorized_keys
+
+copy from local machine .pub then put the value into authorized_keys
+
+chmod 700 .ssh
+chmod 644 .ssh/authorized_keys
+
+
+- ssh login
+ssh <username>@127.0.0.1 -p 2222 -i ~/.ssh.pub
