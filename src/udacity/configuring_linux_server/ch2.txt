@@ -53,3 +53,42 @@ chmod 644 .ssh/authorized_keys
 
 - ssh login
 ssh <username>@127.0.0.1 -p 2222 -i ~/.ssh.pub
+
+
+- file permissions
+-rw
+-r
+-r--
+
+- List items and show some information
+ls -al
+
+- octal file permission
+
+r 4
+w 2
+e 1
+
+
+- file permission commands
+
+chmod: file permission
+chgrp: file group
+chown: file owner
+
+
+
+- Introduction to ports
+
+
+- Introduction to Firewalls
+
+sudo ufw status
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow ssh
+sudo ufw allow 2222/tcp
+sudo ufw allow www
+sudo ufw enable
