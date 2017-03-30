@@ -92,3 +92,35 @@ sudo ufw allow ssh
 sudo ufw allow 2222/tcp
 sudo ufw allow www
 sudo ufw enable
+
+
+- Web server
+sudo apt-get install apache2
+
+- wsgi
+sudo apt-get install libapache2-mod-wsgi
+
+You then need to configure Apache to handle requests using the WSGI module. You’ll do this by editing the /etc/apache2/sites-enabled/000-default.conf file. This file tells Apache how to respond to requests, where to find the files for a particular site and much more. You can read up on everything this file can do within the Apache documentation.
+
+For now, add the following line at the end of the <VirtualHost *:80> block, right before the closing </VirtualHost> line: WSGIScriptAlias / /var/www/html/myapp.wsgi
+
+Finally, restart Apache with the sudo apache2ctl restart command.
+
+
+
+
+
+
+WSGI is a specification that describes how a web server communicates with web applications. Most if not all Python web frameworks are WSGI compliant, including Flask and Django; but to quickly test if you have your Apache configuration correct you’ll write a very basic WSGI application.
+
+You just defined the name of the file you need to write within your Apache configuration by using the WSGIScriptAlias directive. Despite having the extension .wsgi, these are just Python applications. Create the /var/www/html/myapp.wsgi file using the command sudo nano /var/www/html/myapp.wsgi. Within this file, write the following application:
+
+def application(environ, start_response):
+    status = '200 OK'
+    output = 'Hello World!'
+
+    response_headers = [('Content-type', 'text/plain'), ('Content-Length', str(len(output)))]
+    start_response(status, response_headers)
+
+    return [output]
+This application will simply print return Hello World! along with the required HTTP response headers. After saving this file you can reload http://localhost:8080 to see your application run in all its glory!
