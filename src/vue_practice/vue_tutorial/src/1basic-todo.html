@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+        <title>tutorial</title>
+    </head>
+    <body>
+        <div id="app4">
+            <ol>
+                <li>{{ todo }}</li>
+                <li>{{ todo }}</li>
+                <li>{{ todo }}</li>
+            </ol>
+        </div>
+        <script>
+
+        var app4 = new Vue(
+            {
+                el: '#app4',
+                data: {
+                    todo: 'do something!'
+                }
+            }
+        )
+
+
+
+        </script>
+    </body>
+</html>

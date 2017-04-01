@@ -5,10 +5,9 @@ https://medium.com/codingthesmartway-com-blog/vue-js-2-quickstart-tutorial-2017-
 
 https://github.com/thewhitetulip/intro-to-vuejs/blob/master/1_introduction.md
 https://www.sitepoint.com/up-and-running-vue-js-2-0/
-https://scotch.io/tutorials/build-an-app-with-vue-js-a-lightweight-alternative-to-angularjs
-https://scotch.io/tutorials/build-a-single-page-time-tracking-app-with-vue-js-part-ii
-https://vuejsfeed.com/blog/vuejs-2-0-video-series
+
 https://auth0.com/blog/create-an-app-in-vuejs-2/
 https://laracasts.com/series/learn-vue-2-step-by-step/episodes/18
 https://www.liquidlight.co.uk/blog/article/building-a-vue-v2-js-app-using-vue-router/
 http://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js/
+https://scotch.io/tag/vue-js

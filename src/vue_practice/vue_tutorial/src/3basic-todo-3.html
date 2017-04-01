@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+        <title>tutorial</title>
+    </head>
+    <body>
+        <div id="app4">
+            <input type="text" placeholder="title" v-model="todo.title">
+            <input type="text" placeholder="text" v-model="todo.text">
+            <button v-on:click="addTodo(todo)">Add todo</button>
+            <ol>
+                <li v-for="(todo, index) in todos">{{ todo.title }} : {{ todo.text }}</li>
+            </ol>
+        </div>
+        <script>
+
+        var app4 = new Vue(
+            {
+                el: '#app4',
+                data: {
+                    todo: {title: '', text: ''},
+                    todos: [
+                        {title: 'yeah', text: 'learning js'},
+                        {title: 'huh', text: 'go to gym'},
+                        {title: 'mah', text: 'eat lunch'},
+                    ]
+                },
+                methods: {
+                    addTodo: function(item) {
+                        // alert(item.text + " " + item.title);
+                        this.todos.push(this.todo)
+                    }
+                }
+            }
+        )
+
+
+
+        </script>
+    </body>
+</html>
