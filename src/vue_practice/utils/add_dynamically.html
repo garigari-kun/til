@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+        <title>tutorial</title>
+    </head>
+    <body>
+      <div id="app">
+      <table class="table">
+        <thead>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Job</strong></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="row in rows">
+            <td><input type="text" v-model="row.name"></td>
+            <td><input type="text" v-model="row.job"></td>
+            <td><button @click="removeRow(row)">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <button class="button btn-primary" @click="addRow">Add row</button>
+      </div>
+      </div>
+
+        <script>
+
+        var app  = new Vue({
+          el: "#app",
+          data: {
+            rows: [
+              {name: "James Bond",job: "spy"},
+              {name: "Goldfinger", job: "villain"}
+            ]
+          },
+          methods:{
+            addRow: function(){
+              this.rows.push({name:"",job:""});
+            },
+            removeRow: function(row){
+              //console.log(row);
+              this.rows.$remove(row);
+            }
+          }
+        });
+
+
+
+        </script>
+    </body>
+</html>
