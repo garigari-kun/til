@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/vue"></script>
+        <title>Basic</title>
+    </head>
+    <body>
+
+      <div id="vue-instance">
+        <div v-if="isLoggedIn">
+          Welcome {{ name }}!
+          <button type="submit" v-on:click="logout">Logout</button>
+        </div>
+        <div v-else>
+          <input type="text" v-model="name" placeholder="username">
+          <input type="password" placeholder="password">
+          <button v-on:click="login" type="submit">Login</button>
+        </div>
+      </div>
+
+        <script>
+
+        var app = new Vue(
+          {
+            el: '#vue-instance',
+            data: {
+              name: '',
+              isLoggedIn: false,
+            },
+            methods: {
+              login: function() {
+                if (this.name) {
+                  this.isLoggedIn = true
+                } else {
+                  this.errorMessage = ''
+                }
+                //console.log(isLoggedIn)
+              },
+              logout: function() {
+                this.isLoggedIn = false
+                //console.log(isLoggedIn)
+              }
+            }
+          }
+        )
+
+
+        </script>
+    </body>
+</html>
