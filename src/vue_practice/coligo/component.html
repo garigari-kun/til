@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+        <title>Basic</title>
+    </head>
+    <body>
+
+      <div id="app">
+        <greeting message="Hello, Welcome to coligo!"></greeting>
+      </div>
+
+      <template id="greeting-template">
+        <h1>{{ message }}</h1>
+        <button>login</button>
+        <button>signup</button>
+        <a href="http://coligo.io">Check out the other tutorials!</a>
+      </template>
+
+
+
+
+
+        <script>
+
+        Vue.component('greeting', {
+          template: '#greeting-template',
+          props: {
+            message: {
+              type: String,
+              required: true,
+            }
+          }
+        });
+
+        // create a new Vue instance and mount it to our div element above with the id of app
+        var vm = new Vue({
+          el: '#app'
+        });
+
+
+
+        </script>
+    </body>
+</html>
