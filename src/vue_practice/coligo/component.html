@@ -10,6 +10,7 @@
 
       <div id="app">
         <greeting message="Hello, Welcome to coligo!"></greeting>
+        <post :title="title", :author="author", :content="content"></post>
       </div>
 
       <template id="greeting-template">
@@ -17,6 +18,12 @@
         <button>login</button>
         <button>signup</button>
         <a href="http://coligo.io">Check out the other tutorials!</a>
+      </template>
+
+      <template id="post-template">
+        <h1>{{ title }}</h1>
+        <h4>{{ author }}</h4>
+        <p>{{ content }}</p>
       </template>
 
 
@@ -35,9 +42,19 @@
           }
         });
 
+        Vue.component('post', {
+          template: '#post-template',
+          props: ['title', 'author', 'content']
+        })
+
         // create a new Vue instance and mount it to our div element above with the id of app
         var vm = new Vue({
-          el: '#app'
+          el: '#app',
+          data: {
+            author: 'Johnnie Walker',
+            title: 'Aging Your Own Whisky',
+            content: 'A bunch of steps and a whole lot of content'
+          }
         });
 
 
