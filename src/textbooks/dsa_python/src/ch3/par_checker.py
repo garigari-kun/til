@@ -43,6 +43,30 @@ def paran_checker(symbol):
         return False
 
 
+def paran_checker_myver(symbol):
+    if not len(symbol):
+        return False
+
+    stack = Stack()
+    balanced = True
+    for s in symbol:
+        if s == '(':
+            stack.push(s)
+        else:
+            if stack.is_empty():
+                balanced = False
+            else:
+                stack.pop()
+
+    if balanced and stack.is_empty():
+        return True
+    else:
+        return False
+
+
+
 if __name__ == '__main__':
-    print(paran_checker('((()))'))
-    print(paran_checker('(()'))
+    # print(paran_checker('((()))'))
+    # print(paran_checker('(()'))
+    print(paran_checker_myver('((()))'))
+    print(paran_checker_myver('(()'))
