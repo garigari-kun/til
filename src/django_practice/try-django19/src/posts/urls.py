@@ -7,6 +7,6 @@ urlpatterns = [
     url(r'^create/$', post_create),
     url(r'^update/$', post_update),
     url(r'^delete/$', post_delete),
-    url(r'^detail/$', post_detail),
+    url(r'^(?P<id>\d+)/$', post_detail),
 
 ]
