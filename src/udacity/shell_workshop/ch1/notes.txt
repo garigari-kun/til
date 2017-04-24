@@ -1,0 +1,16 @@
+
+- Print messages
+
+echo 'Hello'
+
+- List file or directory for current directory
+
+ls
+
+- Change directory
+
+cd
+
+- Print working directory
+
+pwd
