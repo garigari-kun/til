@@ -14,3 +14,39 @@ cd
 - Print working directory
 
 pwd
+
+
+- list longer version of file or dir information
+ls -l
+
+
+- list details info that is the pdf files
+ls -l /*.pdf
+
+
+- Making directory
+mkdir <dirname>
+
+- Moving file to another dir
+mv <the file I wanna move to> <newdir>
+
+
+- save source code from google.com and save it as google.html
+curl -o google.html -L http://google.com
+
+
+- Reads a file and print
+cat <filename>
+
+- Reads and print less
+less <filename>
+
+- Remove file
+rm <filename>
+
+- Renove dir
+rmdir <dirname>
+
+- Searching
+grep
+grep fish | wc -l
