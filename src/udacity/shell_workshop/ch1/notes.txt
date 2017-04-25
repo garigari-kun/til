@@ -50,3 +50,10 @@ rmdir <dirname>
 - Searching
 grep
 grep fish | wc -l
+
+
+- Shell and environmetal variable
+
+echo $LOGNAME
+echo $PWD
+echo $PATH
