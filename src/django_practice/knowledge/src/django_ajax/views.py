@@ -1,5 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.generic.base import View
 
@@ -24,3 +25,16 @@ class SignUpView(View):
     def post(self, request, *args, **kwargs):
         print(request.POST)
         return HttpResponse('posted')
+
+
+def validate_username(request):
+    username = request.GET.get('username', None)
+    if username is not None:
+        context = {
+            'is_taken': User.objects.filter(username__iexact=username).exists(),
+        }
+    else:
+        context = {
+            'is_taken': False
+        }
+    return JsonResponse(context)
