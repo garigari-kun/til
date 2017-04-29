@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^django_ajax/', include('django_ajax.urls', namespace='da')),
     url(r'^date_view/', include('date_view.urls', namespace='dv')),
+    url(r'^signup/', include('signup.urls', namespace='su'))
 ]

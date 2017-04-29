@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_ajax',
-    'date_view'
+    'date_view',
+    'signup',
 ]
 
 MIDDLEWARE = [
