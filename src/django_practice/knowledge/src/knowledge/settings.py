@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     'django_ajax',
     'date_view',
     'signup',
+    'django_hosts',
+    'hosts_sample'
 ]
 
 MIDDLEWARE = [
+    'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,9 +53,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_hosts.middleware.HostsResponseMiddleware'
 ]
 
 ROOT_URLCONF = 'knowledge.urls'
+
+ROOT_HOSTCONF = 'knowledge.hosts'
+DEFAULT_HOST = 'www'
 
 TEMPLATES = [
     {
