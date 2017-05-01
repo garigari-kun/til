@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'date_view',
     'signup',
     'django_hosts',
-    'hosts_sample'
+    'hosts_sample',
+    'manager_sample'
 ]
 
 MIDDLEWARE = [
