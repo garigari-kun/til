@@ -13,7 +13,7 @@ class DocumentQueryset(models.QuerySet):
 class DocumentManager(models.Manager):
 
     def get_queryset(self):
-    return DocumentQueryset(self.model, using=self._db)
+        return DocumentQueryset(self.model, using=self._db)
 
     def pdfs(self):
         return self.queryset.pdfs()

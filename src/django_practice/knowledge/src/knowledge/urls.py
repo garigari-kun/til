@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^date_view/', include('date_view.urls', namespace='dv')),
     url(r'^signup/', include('signup.urls', namespace='su')),
     url(r'^hosts_sample/', include('hosts_sample.urls', namespace='hs')),
+    url(r'^formset_sample/', include('formset_sample.urls', namespace='fs')),
 ]

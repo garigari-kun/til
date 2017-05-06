@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'signup',
     'django_hosts',
     'hosts_sample',
-    'manager_sample'
+    'manager_sample',
+    'formset_sample'
 ]
 
 MIDDLEWARE = [
