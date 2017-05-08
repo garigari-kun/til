@@ -1,5 +1,5 @@
 from django import forms
-from django.forms.formsets import inlineformset_factory
+#from django.forms.formsets import inlineformset_factory
 
 from .models import Profile, FamilyMember
 
@@ -31,5 +31,5 @@ class FamilyMemberForm(forms.ModelForm):
         model = FamilyMember
         exclude = ()
 
-FamilyMemberFormSet = inlineformset_factory(Profile, FamilyMember,
-                                            form=FamilyMemberForm, extra=1)
+# FamilyMemberFormSet = inlineformset_factory(Profile, FamilyMember,
+#                                             form=FamilyMemberForm, extra=1)

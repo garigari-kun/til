@@ -7,7 +7,7 @@ from .forms import LinkForm
 
 class CreateLinkView(View):
     def get(self, request, *args, **kwargs):
-        LinkFormSet = formset_factory(LinkForm)
+        LinkFormSet = formset_factory(LinkForm, extra=2)
         formset = LinkFormSet()
         context = {
             'formset': formset,
