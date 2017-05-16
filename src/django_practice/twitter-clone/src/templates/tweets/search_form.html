@@ -1,5 +1,0 @@
-<form method="POST" action="{% url 'tweet:list' %}">
-  {% csrf_token %}
-  <input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}">
-  <input type="submit" value="Search">
-</form>
