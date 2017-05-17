@@ -1,0 +1,7 @@
+<div class="form-row" id="empty-form">
+  {{ schedule_formset.management_form }}
+  <!-- {% for formset in schedule_formset %}
+    {{ formset.as_p }}
+  {% endfor %} -->
+  {{ schedule_formset.empty_form.as_p }}
+</div>
