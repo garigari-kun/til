@@ -1,0 +1,12 @@
+<h1>Posts</h1>
+
+{% if posts %}
+    {% for post in posts %}
+        <p>
+            {{ post.title }} created by {{ post.author.username }}
+            <a href='{{ post.pk }}/edit'>編集</a>
+        </p>
+    {% endfor %}
+{% else %}
+    <p>There are not any posts yet.</p>
+{% endif %}
