@@ -1,0 +1,11 @@
+<h1>Update Event</h1>
+
+
+{{ event_form.as_p }}
+
+<hr />
+
+
+{% for schedule in schedule_formset %}
+  {{ schedule.as_p }}
+{% endfor %}
