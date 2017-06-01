@@ -1,0 +1,9 @@
+According to the Open Web Application Security Project, an open redirect occurs when
+an application takes a parameter and redirects a user to that parameter value without
+any conducting any validation on the value.
+This vulnerability is used in phishing attacks to get users to visit malicious sites without
+realizing it, abusing the trust of a given domain to lead users to another. The malicious
+website serving as the redirect destination could be prepared to look like a legitimate
+site and try to collect personal / sensitive information.
+A key to this is a user just needing to visit a URL and be redirected elsewhere. In other
+words, you’re looking for a GET request with no user interaction other than visiting a link.

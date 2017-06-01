@@ -1,0 +1,23 @@
+A Cross-Site Request Forgery, or CSRF, attack occurs when a malicious website, email,
+
+instant message, application, etc. causes a user’s web browser to perform some action
+
+on another website where that user is already authenticated, or logged in. Often this
+
+occurs without the user knowing the action has occurred.
+
+The impact of a CSRF attack depends on the website which is receiving the action. Here’s
+
+an example:
+
+1. Bob logs into his bank account, performs some banking but does not log out.
+
+2. Bob checks his email and clicks a link to an unfamiliar website.
+
+3. The unfamiliar website makes a request to Bob’s banking website to transfer money
+
+passing in cookie information stored from Bob’s banking session in step 1.
+
+4. Bob’s banking website receives the request from the unfamiliar (malicious) website,
+
+without using a CSRF token and processes the transfer.

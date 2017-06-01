@@ -1,0 +1,23 @@
+Hypertext Markup Language (HTML) injection is also sometimes referred to as virtual
+
+defacement. This is really an attack made possible by a site allowing a malicious user
+
+to inject HTML into its web page(s) by not handling that user’s input properly. In other
+
+words, an HTML injection vulnerability is caused by receiving HTML, typically via some
+
+form input, which is then rendered as is on the page. This is separate and distinct from
+
+injecting Javascript, VBscript etc.
+
+Since HTML is the language used to define the structure of a web page, if an attacker
+
+can inject HTML, they can essentially change what a browser renders. Sometimes this
+
+could result in completely changing the look of a page or in other cases, creating forms
+
+to trick users. For example, if you could inject HTML, you might be able to add a <form> tag
+
+to the page, asking the user to re-enter their username and password. However, when
+
+submitting this form, it actually sends the information to an attacker.

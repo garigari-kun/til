@@ -1,0 +1,82 @@
+HTTP Parameter Pollution, or HPP, occurs when a website accepts input from a user and
+
+uses it to make an HTTP request to another system without validating that user’s input.
+
+This can happen one of two ways, via the server (or back end) and via the client side.
+
+On Stack Overflow, SilverlightFox provides a great example of a HPP server side attack;
+
+suppose we have the following website, https://www.example.com/transferMoney.php,
+
+which is accessible via a POST method taking the following parameters:
+
+amount=1000&fromAccount=12345
+
+When the application processes this request, it makes its own POST request to another
+
+back end system, which in turn actually processes the transaction with a fixed toAccount
+
+parameter.
+
+Separate back end URL: https://backend.example/doTransfer.php
+
+Separate back end Parameters: toAccount=9876&amount=1000&fromAccount=12345
+
+Now, if the back end only takes the last parameter when duplicates are provided and
+
+suppose a hacker alters the POST to the website to submit a toAccount param like this:
+
+amount=1000&fromAccount=12345&toAccount=99999
+
+A site vulnerable to an HPP attack would forward the request to the other back end
+
+system looking like:
+
+toAccount=9876&amount=1000&fromAccount=12345&toAccount=99999
+
+In this case, the second toAccount parameter submitted by the malicious user could
+
+override the back end request and transfer the money into the malicious user’s submit-
+ted account (99999) instead of the intended account set by the system (9876).
+
+This is useful if an attacker were to amend their own requests, which are processed
+
+through a vulnerable system. But it can be also more useful to an attacker if that attacker
+
+can generate a link from another website and entice users to unknowingly submit the
+
+malicious request with the extra parameter added by the attacker.
+
+On the other hand, HPP client side involves injecting additional parameters to links and
+
+other src attributes. Borrowing an example from OWASP, suppose we had the following
+
+code:
+
+HTTP Parameter Pollution 18
+
+<? $val=htmlspecialchars($_GET['par'],ENT_QUOTES); ?>
+
+<a href="/page.php?action=view&par='.<?=$val?>.'">View Me!</a>
+
+This takes a value for par from the URL, makes sure it’s safe and creates a link out of it.
+
+Now, if an attacker submitted:
+
+http://host/page.php?par=123%26action=edit
+
+the resulting link would look like:
+
+<a href="/page.php?action=view&par=123&amp;action=edit">View Me!</a>
+
+This could lead to the application then accepting the edit action instead of the view action.
+
+Both HPP server side and client side depend on which back end technology is being
+
+used and how it behaves when receiving multiple parameters with the same name. For
+
+example, PHP/Apache uses the last occurrence, Apache Tomcat uses the first occurrence,
+
+ASP/IIS uses all occurrences, etc. As a result, there is no single guaranteed handling for
+
+submitting multiple parameters with the same name and finding HPP will take some
