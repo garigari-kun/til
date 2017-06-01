@@ -1,0 +1,5 @@
+- Look up ip from domain name
+dig www.google.com
+
+- Set up a TCP connection
+nc 216.58.201.228 80
