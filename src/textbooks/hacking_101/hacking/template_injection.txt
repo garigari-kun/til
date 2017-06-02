@@ -1,0 +1,13 @@
+Template engines are tools that allow developers / designers to separate programming
+
+logic from the presentation of data when creating dynamic web pages. In other words,
+
+rather than have code that receives an HTTP request, queries the necessary data from the
+
+database and then presents it to the user in a monolithic file, template engines separate
+
+the presentation of that data from the rest of the code which computes it (as an aside,
+
+popular frameworks and content management systems also separate the HTTP request
+
+from the query as well).

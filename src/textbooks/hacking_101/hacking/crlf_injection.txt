@@ -1,0 +1,31 @@
+Carriage Return Line Feed (CRLF) Injection is a type of vulnerability that occurs when a
+
+user manages to insert a CRLF into an application. The CRLF characters represent an end
+
+of line for many internet protocols, including HTML, and are %0D%0A which decoded
+
+represent \r\n. These can be used to denote line breaks and when combined with HTTP
+
+Request / Response Headers, can lead to different vulnerabilities, including HTTP Request
+
+Smuggling and HTTP Response Splitting.
+
+In terms of HTTP Request Smuggling, this usually occurs when an HTTP request is passed
+
+through a server which processes it and passes it to another server, like a proxy or
+
+firewall. This type of vulnerability can result in:
+
+• Cache poisoning, a situation where an attacker can change entries in the cache and
+
+serves malicious pages (e.g., containing javascript) instead of the proper page
+
+• Firewall evasion, a situation where a request can be crafted to avoid security checks,
+
+typically involving CRLF and overly large request bodies
+
+• Request Hijacking, a situation where an attacker can steal HttpOnly cookies and
+
+HTTP authentication information. This is similar to XSS but requires no interaction
+
+between the attacker and client

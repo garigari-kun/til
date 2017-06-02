@@ -1,0 +1,51 @@
+A SQL Injection, or SQLi, is a vulnerability which allows a hacker to “inject” a SQL
+
+statements into a target and access their database. The potential here is pretty extensive
+
+often making it a highly rewarded vulnerability. For example, attackers may be able
+
+to perform all or some CRUD actions (Creating, Reading, Updating, Deleting) database
+
+information. Attackers may even be able to achieve remote command execution.
+
+SQLi attacks are usually a result of unescaped input being passed into a site and used as
+
+part of a database query. An example of this might look like:
+
+$name = $_GET['name'];
+
+$query = "SELECT * FROM users WHERE name = $name";
+
+Here, the value being passed in from user input is being inserted straight into the
+
+database query. If a user entered test’ OR 1=1, the query would return the first record
+
+where the name = test OR 1=1, so the first row. Now other times, you may have
+
+something like:
+
+$query = "SELECT * FROM users WHERE (name = $name AND password = 12345");
+
+In this case, if you used the same payload, test’ OR 1=1, your statement would end up
+
+as:
+
+$query = "SELECT * FROM users WHERE (name = 'test' OR 1=1 AND password = 12345");
+
+So, here, the query would behave a little different (at least with MySQL). We would get
+
+all records where the name is test and all records where the password is 12345. This
+
+obviously wouldn’t achieve our goal of finding the first record in the database. As a result,
+
+we need to eliminate the password parameter and can do that with a comment, test’ OR
+
+1=1;–. Here, what we’ve done is add a semicolon to properly end the SQL statement and
+
+immediately added two dashes to signify anything which comes after should be treated
+
+as a comment and therefore, not evaluated. This will end up having the same result as
+
+our initial example.
+
+SQL Injection 65

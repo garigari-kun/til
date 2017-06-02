@@ -1,0 +1,34 @@
+Cross-site scripting, or XSS, involve a website including unintended Javascript code which
+
+is subsequently passes on to users who then execute that code via their browsers. A
+
+harmless example of this is:
+
+alert(‘document.domain’);
+
+This will create the Javascript function alert and create a simple popup with the the
+
+domain name where the XSS executed. Now, in previous versions of the book, I recom-
+mended you use this example when reporting. You can use the example to determine if
+
+a XSS vulnerability exists, but when reporting, think through how the vulnerability could
+
+impact the site and explain that. By that, I don’t mean tell the company what XSS is, but
+
+explain what you could achieve with this that directly impacts their site.
+
+Part of that should include identifying which kind of XSS you are reporting, as there’s
+
+more than one:
+
+• Reflective XSS: These attacks are not persisted, meaning the XSS is delivered and
+
+executed via a single request and response.
+
+• Stored XSS: These attacks are persisted, or saved, and then executed when a page
+
+is loaded to unsuspecting users.
+
+• Self XSS: These attacks are also not persisted and are usually used as part of tricking
+
+a person into running the XSS themselves.
