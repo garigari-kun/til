@@ -1,0 +1,10 @@
+
+
+
+Use the VirtualBox for settings up Kali linux
+
+1, Download the Kali linux for VB ver.
+2, Download the VirtualBox Extension Pack
+3, Open a VB, Preference -> Extension -> Select the Extension pack and install it
+4, File -> Import an Appliance..
+5, Select a Kali linux and install it
