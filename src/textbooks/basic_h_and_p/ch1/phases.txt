@@ -1,0 +1,4 @@
+Four steps to prepare penetration test
+
+Reconnaissance, Scanning, Exploitation, and Post Exploitation
+(or Maintaining Access).

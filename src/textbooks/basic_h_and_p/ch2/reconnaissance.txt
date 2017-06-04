@@ -1,0 +1,19 @@
+-HTTrack
+
+HTTrack is a free utility that creates an identical, offline copy of the
+target website. The copied website will include all the pages, links, pictures, and
+code from the original website; however, it will reside on your local computer.
+
+
+httrack
+
+
+
+-Harvester
+This tool allows us to quickly and accurately catalog both e-mail
+addresses and subdomains that are directly related to our target.
+
+theharvester
+
+Located at:
+/usr/bin/theharvester
