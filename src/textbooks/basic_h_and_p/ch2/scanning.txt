@@ -1,0 +1,19 @@
+Determining if a system is alive with ping packets.
+Port scanning the system with Nmap.
+Leveraging the Nmap scripting engine (NSE) to further interrogate the target.
+Scanning the system for vulnerabilities with Nessus
+
+
+1. Determining if a system is alive with ping packets.
+
+ping
+ping <ipaddress>
+
+
+multipe ping
+
+fping -a -g <ipaddress> <ipaddress> > result.txt
+
+
+
+2. Port scanning the system with Nmap.

@@ -9,11 +9,50 @@ httrack
 
 
 
--Harvester
-This tool allows us to quickly and accurately catalog both e-mail
-addresses and subdomains that are directly related to our target.
+- Harvester
 
-theharvester
+Example:
+theharvester -d <domainname> -l <limit> -b google
 
-Located at:
-/usr/bin/theharvester
+
+- whois
+A very simple but effective means for collecting additional information about
+our target is Whois. The Whois service allows us to access specific information
+about our target including the IP addresses or host names of the company’s
+Domain Name Systems (DNS) servers and contact information which usually
+contains an address and a phone number.
+
+whois <domain_name>
+
+
+- Netcraft
+
+
+- host
+host <target_hostname>
+
+
+- Examinine DNS: nslookup
+
+
+-dig
+Another tool for extracting information from DNS
+dig <target_ip>
+
+
+-fierce
+fierce -dns <target_domain>
+
+
+-MetaGooFil
+MetaGooFil is a metadata extraction tool that is written by the same folks who brought us the
+Harvester. Metadata is often defined as “data about data”. When you create
+a document like Microsoft Word or a PowerPoint presentation, additional data
+are created and stored within your file. These data often include various pieces of
+information that describe the document including the file name, the file size, the
+file owner or user name of the person who created the file, and the location or
+path where the file was saved. This process occurs automatically without any
+
+
+
+http://xeushack.com/
