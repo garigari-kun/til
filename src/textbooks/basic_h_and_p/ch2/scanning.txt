@@ -17,3 +17,16 @@ fping -a -g <ipaddress> <ipaddress> > result.txt
 
 
 2. Port scanning the system with Nmap.
+
+
+
+4. VOrnability scannning
+
+Nessus
+
+Register
+Download and dpkg -i for installing new package
+/etc/init.d/nessusd start
+update-rc.d nessusd enable
+
+Access https://localhost:8834/
