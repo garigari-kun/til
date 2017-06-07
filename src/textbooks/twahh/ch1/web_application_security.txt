@@ -1,0 +1,48 @@
+In fact, the majority of web applications are insecure, despite the widespread
+usage of SSL technology and the adoption of regular PCI scanning.
+
+
+
+--- Broken authentication (62%) — This category of vulnerability encom-
+passes various defects within the application’s login mechanism, which
+may enable an attacker to guess weak passwords, launch a brute-force
+attack, or bypass the login.
+
+
+--- Broken access controls (71%) — This involves cases where the application
+fails to properly protect access to its data and functionality, potentially
+enabling an attacker to view other users’ sensitive data held on the server
+or carry out privileged actions.
+
+
+
+--- SQL injection (32%) — This vulnerability enables an attacker to submit
+crafted input to interfere with the application’s interaction with back-end
+databases. An attacker may be able to retrieve arbitrary data from the
+application, interfere with its logic, or execute commands on the database
+server itself.
+
+
+
+--- Cross-site scripting (94%) — This vulnerability enables an attacker to
+target other users of the application, potentially gaining access to their
+data, performing unauthorized actions on their behalf, or carrying out
+other attacks against them.
+
+
+
+--- Information leakage (78%) — This involves cases where an application
+divulges sensitive information that is of use to an attacker in developing
+an assault against the application, through defective error handling or
+other behavior.
+
+
+
+--- Cross-site request forgery (92%) — This fl aw means that application
+users can be induced to perform unintended actions on the application
+within their user context and privilege level. The vulnerability allows a
+malicious web site visited by the victim user to interact with the applica-
+tion to perform actions that the user did not intend.
+
+
+https://www.hacksplaining.com/
