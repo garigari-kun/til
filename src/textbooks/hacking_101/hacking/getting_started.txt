@@ -1,0 +1,15 @@
+
+Kali Linux
+
+VirtualBox
+
+
+
+- Information Gathering
+KnockPy: Find the subdomains that website have
+IPV4info.com
+
+ZAP proxy
+Wappalyzer
+Burp Suite
+EyeWitness.

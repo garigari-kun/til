@@ -1,0 +1,4 @@
+Server side request forgery, or SSRF, is a vulnerability which allows an attacker to use a
+target server to make HTTP requests on the attacker’s behalf. This is similar to CSRF in
+that both vulnerabilities perform HTTP requests without the victim recognizing it. With
+SSRF, the victim would be the vulnerable server, with CSRF, it would be a user’s browser.
