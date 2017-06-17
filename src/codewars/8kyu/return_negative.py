@@ -15,6 +15,8 @@ Zero (0) can't be negative, see examples above.
 
 '''
 
+import unittest
+
 
 
 def make_negative(number):
@@ -25,8 +27,13 @@ def make_negative(number):
     return answer
 
 
+class Test(unittest.TestCase):
+    def test_make_negative(self):
+        self.assertEqual(make_negative(42), -42)
+        self.assertEqual(make_negative(-9), -9)
+        self.assertEqual(make_negative(0), 0)
+
+
 
 if __name__ == '__main__':
-    make_negative(42)
-    make_negative(-9)
-    make_negative(0)
+    unittest.main()
