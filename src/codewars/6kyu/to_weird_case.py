@@ -19,6 +19,9 @@ to_weird_case('Weird string case') # => returns 'WeIrD StRiNg CaSe'
 '''
 
 
+import unittest
+
+
 def to_weird_case(string):
     s_string = string.split(' ')
     s_word_list = []
@@ -43,6 +46,15 @@ def to_weird_case(string):
 
 
 
+class Test(unittest.TestCase):
+    def test_to_weird_case(self):
+        self.assertEqual(to_weird_case('Weird string case'), 'WeIrD StRiNg CaSe')
+        self.assertEqual(to_weird_case('String'), 'StRiNg')
+
+
+
+
 if __name__ == '__main__':
-    to_weird_case('Weird string case')
-    to_weird_case('String')
+    # to_weird_case('Weird string case')
+    # to_weird_case('String')
+    unittest.main()
