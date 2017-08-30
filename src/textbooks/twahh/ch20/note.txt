@@ -4,3 +4,13 @@ Introduction to Burp suite from Youtube course
 - Web Goat from OWASP
 - Burp suite
 - Kali Linux
+
+
+
+
+How to install Webgoat on Kali
+
+apt-get install tomcat6
+
+mv Webgoat /var/lib/tomcat6/webapps
+service tomcat6 start
