@@ -14,3 +14,31 @@ apt-get install tomcat6
 
 mv Webgoat /var/lib/tomcat6/webapps
 service tomcat6 start
+
+
+
+Another way
+java -jar
+
+
+Access to http://localhost:8080/WebGoat/login.mv
+
+
+Each integrated testing suite contains several complementary tools that share
+information about the target application. Typically, the attacker engages with the
+application in the normal way via his browser. The tools monitor the resulting
+requests and responses, storing all relevant details about the target application
+
+and providing numerous useful functions. The typical suite contains the fol-
+lowing core components:
+
+n An intercepting proxy
+n A web application spider
+n A customizable web application fuzzer
+n A vulnerability scanner
+n A manual request tool
+n Functions for analyzing session cookies and other tokens
+n Various shared functions and utilities
+Intercepting Proxies
+The intercepting proxy lies at the heart of the tool suite and remains today the
+only essential component. To use an intercepting proxy, you must confi gure
