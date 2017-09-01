@@ -25,7 +25,7 @@ Access to http://localhost:8080/WebGoat/login.mv
 
 
 Each integrated testing suite contains several complementary tools that share
-information about the target application. Typically, the attacker engages with the
+information about the target application. Typically, the attacker engages with thechrome
 application in the normal way via his browser. The tools monitor the resulting
 requests and responses, storing all relevant details about the target application
 
