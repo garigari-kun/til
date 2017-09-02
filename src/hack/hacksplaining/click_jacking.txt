@@ -1,0 +1,11 @@
+Clickjacking attacks trick web users into performing an action they did not intend,
+typically by rendering an invisible page element on top of the action the user thinks they are performing.
+
+
+Clickjacking attacks wrap a page the user trusts in an iframe, then renders invisible elements on top of the frame. To ensure that your site doesn’t get used in a clickjacking attack, you need to make sure it cannot be wrapped in an iframe by a malicious site. This can be done by giving the browser instructions directly via HTTP headers, or in older browser by using client-side JavaScript (frame-killing).
+
+X-Frame-Options
+
+The X-Frame-Options HTTP header can be used to indicate whether or not a browser should be allowed to render a page in a <frame>, <iframe> or <object> tag. It was designed specifically to help protect against clickjacking.
+
+There are three permitted values for the header:

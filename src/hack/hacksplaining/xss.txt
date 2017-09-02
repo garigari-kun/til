@@ -1,0 +1,24 @@
+Cross-site scripting (XSS) is one of the most common methods hackers use to attack websites.
+XSS vulnerabilities permit a malicious user to execute arbitrary chunks of JavaScript
+when other users visit your site.
+
+
+
+
+
+Web pages are made up of HTML, usually described in template files, with dynamic content woven in when the page is rendered. Stored XSS attacks make use of the improper treatment of dynamic content coming from a backend data store. The attacker abuses an editable field by inserting some JavaScript code, which is evaluated in the browser when another user visits that page.
+
+Unless your site is a content-management system, it is rare that you want your users to author raw HTML. Instead, you should escape all dynamic content coming from a data store, so the browser knows it is to be treated as the contents of HTML tags, as opposed to raw HTML.
+
+Escaping dynamic contents generally consists of replacing significant characters with the HTML entity encoding:
+
+"	&#34
+#	&#35
+&	&#38
+'	&#39
+(	&#40
+)	&#41
+/	&#47
+;	&#59
+<	&#60
+>	&#62

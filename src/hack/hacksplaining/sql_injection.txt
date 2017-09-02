@@ -1,0 +1,45 @@
+Programming languages talk to SQL databases using database drivers. A driver allows an application to construct and run SQL statements against a database, extracting and manipulating data as needed. Parameterized statements make sure that the parameters (i.e. inputs) passed into SQL statements are treated in a safe manner.
+
+For example, a secure way of running a SQL query in JDBC using a parameterized statement would be:
+
+
+// Define which user we want to find.
+String email = "user@email.com";
+
+// Connect to the database.
+Connection conn = DriverManager.getConnection(URL, USER, PASS);
+Statement stmt = conn.createStatement();
+
+// Construct the SQL statement we want to run, specifying the parameter.
+String sql = "SELECT * FROM users WHERE email = ?";
+
+// Run the query, passing the 'email' parameter value...
+ResultSet results = stmt.executeQuery(sql, email);
+
+while (results.next()) {
+  // ...do something with the data returned.
+}
+
+Contrast this to explicit construction of the SQL string, which is very, very dangerous:
+
+
+// The user we want to find.
+String email = "user@email.com";
+
+// Connect to the database.
+Connection conn = DriverManager.getConnection(URL, USER, PASS);
+Statement stmt = conn.createStatement();
+
+// Bad, bad news! Don't construct the query with string concatenation.
+String sql = "SELECT * FROM users WHERE email = '" + email + "'";
+
+// I have a bad feeling about this...
+ResultSet results = stmt.executeQuery(sql);
+
+while (results.next()) {
+  // ...oh look, we got hacked.
+}
+
+The key difference is the data being passed to the executeQuery(...) method. In the first case, the parameterized string and the parameters are passed to the database separately, which allows the driver to correctly interpret them. In the second case, the full SQL statement is constructed before the driver is invoked, meaning we are vulnerable to maliciously crafted parameters.
+
+You should always use parameterized statements where available, they are your number one protection against SQL injection.
