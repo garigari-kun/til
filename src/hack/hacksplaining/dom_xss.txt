@@ -1,0 +1,2 @@
+Cross-site scripting (XSS) is one of the most common ways hackers attack websites.
+XSS vulnerabilities permit a malicious user to execute arbitrary chunks of JavaScript when other users visit your site.

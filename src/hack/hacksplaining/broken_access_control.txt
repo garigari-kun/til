@@ -1,0 +1,12 @@
+Correctly applied access control rules are key to keeping your data secure.
+Almost all applications need to protect sensitive data and operations,
+so putting careful thought into how to restrict access is important when designing a system.
+
+
+
+There is no one-size-fits-all solution to correctly implement access control. Generally speaking, your access control strategy should cover three aspects:
+
+Authentication - correctly identifying a user when they return to the application.
+Authorization - deciding what actions a user should and should not be able to perform once they have been authenticated.
+Permission Checking - evaluating authorization at the point-in-time when a user attempts to perform an action.
+Authorization is often implemented by granting each user a specific role. (Administrative users are frequently differentiated from regular users, for instance.) More granular permissioning schemes need to be implemented if individual documents or data items need to have separate privileges.

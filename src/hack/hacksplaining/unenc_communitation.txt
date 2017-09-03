@@ -1,0 +1,8 @@
+Encryption prevents an attacker from intercepting traffic sent between you and your users.
+It is cheap and easy to implement, and an absolute necessity when transmitting sensitive data.
+
+
+
+Insecure Wi-Fi hotspots, as illustrated in our exercise, are just one way enterprising hackers have found to take advantage of unencrypted communication. They may also try to sniff traffic within your network, and if they get access, inspect traffic going through compromised edge devices.
+
+Any point between your server and the user’s browser is a potential weak-spot. Given the non-deterministic nature of internet routing, a lot of opportunities present themselves to an enterprising attacker.

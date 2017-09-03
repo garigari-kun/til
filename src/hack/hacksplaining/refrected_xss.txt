@@ -1,0 +1,11 @@
+Cross-site scripting (XSS) is one the most common ways hackers attack websites.
+XSS vulnerabilities permit a malicious user to execute arbitrary chunks of JavaScript when other users visit your site.
+
+
+
+
+Reflected XSS attacks are less dangerous than stored XSS attacks,
+which cause a persistent problem when users visit a particular page,
+but are much more common. Any page that takes a parameter from a GET or POST request and displays that parameter back to the user in some fashion is potentially at risk. A page that fails to treat query string parameters as untrusted content can allow the construction of malicious URLs. An attacker will spread these malicious URLs in emails, in comments sections, or in forums.
+Since the link points at a site the user trusts,
+they are much more likely to click on it, not knowing the harm that it will do.

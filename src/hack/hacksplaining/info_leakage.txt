@@ -1,0 +1,3 @@
+Disclosing system information helps an adversary learn about your site and form a plan of attack.
+Try to reveal as little about your technology stack and architecture as possible,
+beyond what is essential for your users to know.
