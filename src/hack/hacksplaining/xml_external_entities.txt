@@ -1,0 +1,2 @@
+Unsecured XML parsers can permit an attacker to probe your file system for sensitive information.
+If your site accepts XML in any fashion, you need to ensure your parser is correctly configured.

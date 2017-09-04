@@ -1,0 +1,2 @@
+Privilege escalation vulnerabilities allow attackers to impersonate other users, or gain permissions they should not have.
+These vulnerabilities occur when code makes access decisions on the back of untrusted inputs.

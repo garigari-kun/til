@@ -1,0 +1,6 @@
+XML Bombs are an easy way for an attacker to perform a denial-of-service attack against your server,
+if it accepts XML uploads.
+
+
+A malicious XML file could take your server offline, causing the loss of critical functions and the loss of revenue.
+Protecting yourself is a matter of making sure your XML parser is properly configured.
