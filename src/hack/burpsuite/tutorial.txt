@@ -1,0 +1,6 @@
+
+1, Firefox setting for manual proxy configuration
+2, Open the Burpsuite and set proxy -> options- > proxy listeners setting
+3, Turn intercept on
+
+Let's reload the browser and see proxy is working
