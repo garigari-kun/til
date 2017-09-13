@@ -4,3 +4,10 @@
 3, Turn intercept on
 
 Let's reload the browser and see proxy is working
+
+
+
+WebGoat
+Auth -> Forgot password
+
+Intercept on and Send to intruder for POST request
