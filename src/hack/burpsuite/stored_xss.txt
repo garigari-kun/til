@@ -1,0 +1,39 @@
+
+
+- Experimental inputs
+
+POST /WebGoat/attack?Screen=598569451&menu=900 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Referer: http://localhost:8080/WebGoat/start.mvc
+Content-Length: 37
+Cookie: JSESSIONID=F961CB654EE894D8D3C7CF25C1669396
+Connection: close
+
+title=test&message=test&SUBMIT=Submit
+
+
+
+- <XSSTEST> inputs
+
+POST /WebGoat/attack?Screen=598569451&menu=900 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Referer: http://localhost:8080/WebGoat/start.mvc
+Content-Length: 95
+Cookie: JSESSIONID=F961CB654EE894D8D3C7CF25C1669396
+Connection: close
+
+title=%3CXSSTEST%3Etest%3C%2FXSSTEST%3E&message=%3CXSSTEST%3Etest%3C%2FXSSTEST%3E&SUBMIT=Submit
+
+
+
+I found that message input is not validated properly.
