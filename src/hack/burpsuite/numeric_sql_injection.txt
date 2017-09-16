@@ -1,0 +1,5 @@
+
+Example query
+SELECT * FROM Weather WHERE id=101 or 1 = 1;
+
+Retrieve everything not just id of 101
