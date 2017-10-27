@@ -1,0 +1,13 @@
+
+
+Customer
+
+
+Bicycle
+
+
+
+Trip
+
+
+Mechanic
