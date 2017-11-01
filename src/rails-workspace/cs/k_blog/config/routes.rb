@@ -1,5 +1,10 @@
 KBlog::Application.routes.draw do
+  get "kei/teach"
+  get "kei/speak"
+  get "kei/dig"
   get "say/hello"
+  get "say/goodbye"
+  get "say/something"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -40,7 +45,7 @@ KBlog::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
