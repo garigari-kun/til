@@ -1,0 +1,7 @@
+
+Try add class when the link is clicked
+
+:class => "current-page"
+
+
+if action_name == "Home"
