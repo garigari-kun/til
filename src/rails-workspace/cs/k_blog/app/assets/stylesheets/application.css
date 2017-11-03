@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+
+ .current-page {
+   border-bottom: 5px solid red;
+ }

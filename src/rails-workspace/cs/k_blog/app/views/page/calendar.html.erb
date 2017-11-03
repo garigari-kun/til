@@ -1,2 +1,8 @@
-<h1>Page#calendar</h1>
-<p>Find me in app/views/page/calendar.html.erb</p>
+<h1>Calendar</h1>
+<%= @time.year %> <%= @time.strftime("%B") %>
+# Day of the week<br />
+
+<br />
+<%= mail_to("k0n2tua@gmail.com", "Email me!") %>
+
+<%= calendar(@year, @month).html_safe() %>
