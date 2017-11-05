@@ -19,8 +19,18 @@ class PageController < ApplicationController
 
   def calendar
     @time = Time.now()
-    @year = 2017
-    @month = 11
+    @year = params["year"].to_i
+    @month = params["month"].to_i
+
+    if @year <= 0
+      @year = @time.strftime("%Y").to_i
+    end
+
+    if @month < 1 || @month > 12
+      @month = @time.strftime("%m").to_i
+    end
+
+
   end
 
   def articles

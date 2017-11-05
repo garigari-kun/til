@@ -5,7 +5,7 @@ KBlog::Application.routes.draw do
   get "page/products"
   get "page/newsletter"
   get "page/blog"
-  get "page/calendar"
+  get "page/calendar(/:year(/:month))" => "page#calendar", :as => "page_calendar"
   get "page/articles"
   get "page/login"
   get "kei/teach"
