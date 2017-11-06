@@ -1,2 +1,17 @@
-<h1>Page#contact_us</h1>
-<p>Find me in app/views/page/contact_us.html.erb</p>
+<h1>Contact us!</h1>
+
+
+<div class="contact-us-container panel">
+  <%= form_for(contact_us_path, :method => "POST") do %>
+    <p>
+      <%= label_tag :name, "Name: " %>
+      <%= text_field_tag :name, @name, :class => "form-control"  %>
+    </p>
+    <p>
+      <%= label_tag :email, "Email address: " %>
+      <%= email_field_tag :email, @email, :class => "form-control" %>
+    </p>
+
+    <%= submit_tag "Contact!", :class => "btn" %>
+  <% end %>
+</div>

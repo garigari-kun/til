@@ -1,11 +1,12 @@
 KBlog::Application.routes.draw do
   get "page/home"
   get "page/about_us"
-  get "page/contact_us"
+  # get "contact_us" => "page#contact_us", :as => "contact_us"
+  match "contact_us", :to => "page#contact_us", :as => "contact_us", :via => [:get, :post]
   get "page/products"
   get "page/newsletter"
   get "page/blog"
-  get "page/calendar(/:year(/:month))" => "page#calendar", :as => "page_calendar"
+  get "calendar(/:year(/:month))" => "page#calendar", :as => "calendar"
   get "page/articles"
   get "page/login"
   get "kei/teach"

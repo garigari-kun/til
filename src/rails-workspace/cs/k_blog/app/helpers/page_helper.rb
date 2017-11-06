@@ -34,11 +34,9 @@ module PageHelper
 
     cal = ""
     cal += "#{ sel_month }, #{ sel_year }<br />"
-    # cal += link_to("Prev", "/page/calendar?year=#{ prev_year }&month=#{ prev_month }")
-    cal += link_to("Prev", page_calendar_path(:month => prev_year, :year => prev_month))
+    cal += link_to("Prev", calendar_path(:month => prev_month, :year => prev_year))
     cal += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-    # cal += link_to("Next", "/page/calendar?year=#{ next_year }&month=#{ next_month }")
-    cal += link_to("Next", page_calendar_path(:month => next_month, :year => next_year))
+    cal += link_to("Next", calendar_path(:month => next_month, :year => next_year))
     days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     cal += "<table class='table'><tr>"
     # Rendering week header
@@ -101,6 +99,9 @@ module PageHelper
 
 
     cal += "</table>"
+
+    cal += link_to("test", calendar_path(:year => "test", :month => "test"))
+
     return cal
   end
 
