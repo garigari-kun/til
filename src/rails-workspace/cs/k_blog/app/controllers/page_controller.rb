@@ -6,6 +6,17 @@ class PageController < ApplicationController
   end
 
   def contact_us
+    @name = params["name"]
+    if @name == ""
+      @error_msg = "Must enter your name!"
+    end
+    @email = params["email"]
+    @question = params["question"]
+    @newsletter = params["newsletter"] == "newsletter"
+    gender = params["gender"]
+    @male = gender == "Male"
+    @female = gender == "Female"
+    @product = params["product"]
   end
 
   def products

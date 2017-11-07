@@ -2,16 +2,41 @@
 
 
 <div class="contact-us-container panel">
+  <%= @error_msg %>
   <%= form_for(contact_us_path, :method => "POST") do %>
     <p>
       <%= label_tag :name, "Name: " %>
-      <%= text_field_tag :name, @name, :class => "form-control"  %>
+      <%= text_field_tag :name, @name, :class => "form-control", :placeholder => "Enter your name here"  %>
     </p>
     <p>
       <%= label_tag :email, "Email address: " %>
-      <%= email_field_tag :email, @email, :class => "form-control" %>
+      <%= email_field_tag :email, @email, :class => "form-control", :placeholder => "Enter your email here" %>
+    </p>
+    <p>
+      <%= label_tag :question, "Content: " %>
+      <%= text_area_tag :question, @question, :class => "form-control", :size => "50×10" %>
+    </p>
+    <p>
+      <%= check_box_tag :newsletter, "newsletter", @newsletter %>
+      Subscribe to my newsletter?
+    </p>
+    <p>
+      <%= radio_button_tag :gender, "Male", @male %>Male
+      <%= radio_button_tag :gender, "Female", @female %>Female
+    </p>
+    <p>
+      <%= select_tag :product, options_for_select(
+        [
+          ["Skis", 0],
+          ["Poles", 1],
+          ["Boots", 2]
+        ],
+        @product
+      ) %>
     </p>
 
     <%= submit_tag "Contact!", :class => "btn" %>
   <% end %>
+
+
 </div>
