@@ -2,6 +2,10 @@
 
 
 <div class="contact-us-container panel">
+
+
+  <% if !@submitted || @form_error %>
+
   <%= @error_msg %>
   <%= form_for(contact_us_path, :method => "POST") do %>
     <p>
@@ -37,6 +41,14 @@
 
     <%= submit_tag "Contact!", :class => "btn" %>
   <% end %>
+
+  <% else %>
+    Thanks for contacting us!
+
+
+  <% end %>
+
+
 
 
 </div>
