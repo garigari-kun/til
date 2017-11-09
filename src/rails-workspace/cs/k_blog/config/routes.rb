@@ -1,4 +1,7 @@
 KBlog::Application.routes.draw do
+  resources :movies
+
+  get "people/index"
   get "page/home"
   get "page/about_us"
   # get "contact_us" => "page#contact_us", :as => "contact_us"
