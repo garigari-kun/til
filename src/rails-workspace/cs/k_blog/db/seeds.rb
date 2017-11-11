@@ -18,12 +18,30 @@
 # t.string   "image"
 # t.string   "thumbnail"
 
+# require "faker"
+# include Faker
 
-movie = Movie.create(
-  :name => "Machine",
-  :director => "Johnson",
-  :description => "Something about machine",
-  :year => 2017,
-  :length => 120,
-  :format => "HD",
-)
+formats = ["Beta", "VHS", "IMAX", "HD", "SuperHD", "4K", "DVD", "BlueRay"]
+
+images = ["skies.jpg", "boots.jpg", "poles.jpg"]
+
+
+Movie.destroy_all()
+
+
+100.times do
+
+  movie = Movie.create(
+    :name => Faker::Company.bs,
+    :director => Faker::Name.name,
+    :description => Faker::Lorem.paragraphs.join('<br />'),
+    :year => rand(1940..2017),
+    :length => rand(20..240),
+    :format => formats[rand(formats.length)],
+    :image => images[rand(images.length)],
+    :thumbnail => images[rand(images.length)]
+  )
+
+  puts movie.inspect
+
+end
