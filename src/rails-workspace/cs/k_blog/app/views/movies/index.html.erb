@@ -1,8 +1,17 @@
 <h1>Listing movies</h1>
 
+<!-- <div class="pagination">
+  <%= link_to "Prev", movies_path(:page => @prev_page) %>
+  <%= link_to "Next", movies_path(:page => @next_page) %>
+</div> -->
+
+<%= paginate @movies %>
+
+
 <table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Director</th>
       <th>Description</th>
@@ -19,6 +28,7 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
+        <td><%= movie.id %></td>
         <td><%= link_to movie.name, movie_path(movie.id) %></td>
         <td><%= movie.director %></td>
         <td><%= truncate(movie.description.html_safe, :length => 20) %></td>

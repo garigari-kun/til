@@ -4,7 +4,11 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    @page = params["page"].to_i
+    # @prev_page, @next_page = get_pagination(@page, Movie.count)
+    # @movies = Movie.limit(5).offset(@page * 5)
+    @movies = Movie.page(@page).order(updated_at: :desc)
+
   end
 
   # GET /movies/1
@@ -80,4 +84,22 @@ class MoviesController < ApplicationController
         :thumbnail
         )
     end
+end
+
+
+
+def get_pagination(page=0, max_count=0)
+  if page == 0
+    prev_page = 0
+  else
+    prev_page = page - 1
+  end
+
+  if page * 5 > max_count
+    next_page = 0
+  else
+    next_page = page + 1
+  end
+
+  return prev_page, next_page
 end

@@ -50,3 +50,7 @@ gem 'rb-readline'
 gem 'linguistics'
 
 gem 'faker'
+
+gem 'kaminari'
+
+gem 'devise'

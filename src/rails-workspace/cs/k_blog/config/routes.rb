@@ -1,5 +1,8 @@
 KBlog::Application.routes.draw do
-  resources :movies
+  # resources :movies
+  resources :movies do
+    get '/:page', action: :index, on: :collection
+  end
 
   get "people/index"
   get "page/home"
