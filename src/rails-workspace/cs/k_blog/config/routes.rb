@@ -1,4 +1,6 @@
 KBlog::Application.routes.draw do
+  root 'movies#index'
+  devise_for :users
   # resources :movies
   resources :movies do
     get '/:page', action: :index, on: :collection
