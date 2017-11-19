@@ -1,11 +1,26 @@
 
 
 
-def rotate_matrix_clockwise(matrix):
-    n = len(matrix)
-    m = len(matrix[0])
+def format_matrix_for_rotating(matrix):
+    container_list = [[] for i in range(len(matrix))]
     for row in matrix:
-        print(row)
+        for i in range(len(row)):
+            container_list[i].append(row[i])
+
+    return container_list
+
+def rotate_matrix_clockwise(matrix):
+    formatted_matrix = format_matrix_for_rotating(matrix)
+    print(formatted_matrix)
+
+
+
+
+
+
+
+
+
 
 
 
