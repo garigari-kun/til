@@ -1,24 +1,12 @@
 """
 
-In list complehensions, create a whole new list containing one item for each value in the input sequence.
-
-
-
-"""
-
-value = [len(x) for x in open('/tmp/my_file.txt')]
-print(value)
+Consider Generator expression for large list comprehension
 
 
 """
 
-In generator expressions, do not materialize the whole output sequence when they are run
-Instead, generator expressions evaluate to an iterator that yield one item at a time from the expressions
+# This causes using too much memory and crash the program
+values = [len(x) for x in open('largefile.txt')]
 
-"""
-it = (len(x) for x in open('/tmp/my_file.txt'))
-print(it)
-
-
-roots = ((x, x ** 0.5) for x in it)
-print(next(roots))
+# So Use Generator
+values = (len(x) for x in open('largefile.txt'))
