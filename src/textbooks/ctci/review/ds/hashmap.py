@@ -6,7 +6,6 @@ class HashMap(object):
         self.size = 6
         self.map = [None] * self.size
 
-
     def add(self, key, value):
         hash_key = self._get_hash(key)
         hash_value = [key, value]
@@ -19,10 +18,8 @@ class HashMap(object):
                 if h_key == key:
                     h_value = value
                     return True
-
             self.map[hash_key].append(hash_value)
             return True
-
 
     def get(self, key):
         hash_key = self._get_hash(key)
@@ -31,9 +28,7 @@ class HashMap(object):
             for h_key, h_value in self.map[hash_key]:
                 if h_key == key:
                     return h_value
-
         return None
-
 
     def delete(self, key):
         hash_key = self._get_hash(key)
@@ -42,14 +37,15 @@ class HashMap(object):
             return False
 
         for i, hash_pair in enumerate(self.map[hash_key]):
-            # print(hash_pair)
             if hash_pair[0] == key:
-                # print(hash_pair)
-                # print(i)
                 self.map[hash_key].pop(i)
                 return True
 
-
+    def _get_hash(self, key):
+        hash_key = 0
+        for char in str(key):
+            hash_key += ord(char)
+        return hash_key % self.size
 
     def describe(self):
         print("\n-------------------------------------------\n")
@@ -59,14 +55,6 @@ class HashMap(object):
         print("\n")
         print("You have {} slots of hashmap".format(len(self.map)))
         print("-----------------------------------------\n")
-
-
-    def _get_hash(self, key):
-        hash_key = 0
-        for char in str(key):
-            hash_key += ord(char)
-
-        return hash_key % self.size
 
 
 
