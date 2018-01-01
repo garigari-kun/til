@@ -1,89 +1,12 @@
 """
 
-Linked list
-
-class Node:
-    __init__
-    get_value
-    set_value
-    get_next
-    set_next
-
-class LinkedList:
-    __init__
-    add
-    get_size
-    remove
-    find
-
+LinkedList
 
 
 """
+
+
 class Node(object):
-
-    def __init__(self, value, next=None):
-        self.value = value
-        self.next = next
-
-    def get_value(self):
-        return self.value
-
-    def set_value(self, value):
-        self.value = value
-
-    def get_next(self):
-        return self.next
-
-    def set_next(self, next):
-        self.next = next
-
-
-class LinkedList(object):
-
-    def __init__(self, root=None):
-        self.root = None
-        self.size = size
-
-    def size(self):
-        return self.size
-
-    def add(self, value):
-        new_node = Node(value, self.root)
-        self.root = new_node
-        size += 1
-
-    def remove(self, value):
-        current_node = self.root
-        prev_node = None
-
-        while current_node:
-            if current_node.get_value() == value:
-                if prev_node:
-                    prev_node.set_next(current_node.get_next())
-                else:
-                    self.root = current_node.get_next()
-                self.size -= 1
-                return True
-            else:
-                prev_node = current_node
-                current_node = current_node.get_next()
-
-        return False
-
-    def find(self, value):
-        current_node = self.root
-        while current_node:
-            if current_node.get_value() == value:
-                return value
-            else:
-                current_node = current_node.get_next()
-
-        return False
-
-
-
-
-class PythonicNode(object):
 
     def __init__(self, value, next=None):
         self._value = value
@@ -106,7 +29,7 @@ class PythonicNode(object):
         self._next = next
 
 
-class PythonicLinkedList(object):
+class LinkedList(object):
 
     def __init__(self):
         self._root = None
@@ -123,6 +46,15 @@ class PythonicLinkedList(object):
         self._size += 1
         return True
 
+    def find(self, value):
+        current_node = self._root
+        while current_node:
+            if current_node.value == value:
+                return True
+            else:
+                current_node = current_node.next
+        return False
+
     def remove(self, value):
         current_node = self._root
         prev = None
@@ -135,15 +67,9 @@ class PythonicLinkedList(object):
                 self._size -= 1
                 return True
             else:
-                prev, current_node = self.set_prev_and_current_node(current_node)
+                prev = current_node
+                current_node = current_node.next
         return False
-
-    def _set_prev_and_current_node(self, current_node):
-        prev = current_node
-        current_node = current_node.next
-        return prev, current_node
-
-
 
     def find(self, value):
         current_node = self._root
@@ -156,37 +82,19 @@ class PythonicLinkedList(object):
 
 
 
-    def __str__(self):
-        node_list = []
-        current = self._root
-        while current:
-            node_list.append(str(current.value))
-            current = current.next
-        return " -> ".join(node_list)
-
-
-
-
-
-
 
 if __name__ == "__main__":
-    pll = PythonicLinkedList()
-    pll.add(3)
-    pll.add(10)
-    pll.add(12)
-    pll.add(20)
-    print(pll)
-    print(pll.size)
-    pll.remove(12)
-    print(pll)
-    print(pll.find(10))
-    print(pll.find(100))
-
-
-
-
-
+    linked_list = LinkedList()
+    linked_list.add(3)
+    linked_list.add(10)
+    linked_list.add(12)
+    linked_list.add(20)
+    print(linked_list)
+    print(linked_list.size)
+    linked_list.remove(12)
+    print(linked_list)
+    print(linked_list.find(10))
+    print(linked_list.find(100))
 
 
 
