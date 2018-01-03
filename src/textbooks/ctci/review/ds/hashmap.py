@@ -1,4 +1,14 @@
+"""
 
+Basically the searching takes O(1) time.
+But the collisions happen it takes O(n) time for searching.
+
+
+Collisions
+
+
+
+"""
 
 class HashMap(object):
 
