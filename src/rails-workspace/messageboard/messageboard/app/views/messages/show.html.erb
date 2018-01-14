@@ -1,0 +1,17 @@
+<h3><%= @message.title %></h3>
+<p>
+  <%= @message.description %>
+</p>
+
+<%= link_to "Top", root_path %>
+<%= link_to "Edit", edit_message_path(@message.id) %>
+<%= link_to "Delete",
+            message_path(@message.id),
+            :method => :delete,
+            :data => { confirm: "Are you sure?" }%>
+
+<h3>Comments</h3>
+<%= render "comments/comments" %>
+
+<h3>Reply to message</h3>
+<%= render "comments/form" %>
