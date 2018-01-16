@@ -1,0 +1,12 @@
+<% if params[:category] %>
+  <h1 class="current-category">
+    Category filtering: <%= params[:category] %>
+  </h1>
+<% end %>
+
+
+<% @books.each do |book| %>
+  <h1><%= link_to book.title, book_path(book.id) %></h1>
+<% end %>
+
+<%= link_to "New book", new_book_path %>

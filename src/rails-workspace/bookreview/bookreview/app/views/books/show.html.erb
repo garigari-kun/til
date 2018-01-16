@@ -1,0 +1,26 @@
+<h1><%= @book.title %></h1>
+<p>
+  Written by, <%= @book.author %>
+</p>
+<% if @book.category_id %>
+  <p>
+    Category: <%= @book.category.name %>
+  </p>
+<% end %>
+<hr />
+<p>
+  <%= @book.description %>
+</p>
+
+
+<%= link_to "Top", root_path %>
+
+<% if user_signed_in? %>
+  <% if @book.user_id == current_user.id %>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
+    <%= link_to "Delete",
+                book_path(@book.id),
+                method: :delete,
+                data: { confirm: "Are you sure?"} %>
+  <% end %>
+<% end %>
