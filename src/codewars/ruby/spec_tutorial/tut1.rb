@@ -6,10 +6,7 @@ class StringCalculator
       return 0
     else
       numbers = input.split(",").map { |num| num.to_i  }
-      # sum = 0
-      # numbers.each { |num| sum += num }
-      # return sum
-      return numbers.sum()
+      return numbers.inject(0) { |sum, number| sum + number }
     end
   end
 
