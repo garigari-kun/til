@@ -27,6 +27,9 @@ RSpec.feature "Users can create new projects" do
 
     expect(page).to have_content "Project has not been created."
     expect(page).to have_content "Name can't be blank"
+
+    visit "/"
+    expect(page).to have_no_content "Project has not been created."
   end
 
 end
