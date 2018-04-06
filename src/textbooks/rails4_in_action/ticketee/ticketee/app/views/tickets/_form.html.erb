@@ -1,0 +1,21 @@
+<%= simple_form_for([project, ticket]) do |f| %>
+
+<% if ticket.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+  </div>
+  <ul>
+    <% ticket.errors.full_messages.each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+
+  <%= f.button :submit, class: "btn-primary" %>
+<% end %>
