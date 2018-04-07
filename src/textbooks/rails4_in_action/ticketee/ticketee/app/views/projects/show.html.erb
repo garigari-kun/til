@@ -26,3 +26,13 @@
 </div>
 
 <%= @project.description %>
+
+
+<ul id="tickets">
+  <% @project.tickets.each do |ticket| %>
+    <li>
+      #<%= ticket.id %> -
+      <%= link_to ticket.name, project_ticket_path(@project.id, ticket.id)%>
+    </li>
+  <% end %>
+</ul>
