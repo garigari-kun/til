@@ -4,6 +4,20 @@
   </header>
   <header>
     <h2><%= @ticket.name %></h2>
+    <ul class="action">
+      <li>
+        <%= link_to "Edit Ticket",
+                    edit_project_ticket_path(@project.id, @ticket.id),
+                    class: "edit" %>
+      </li>
+      <li>
+        <%= link_to "Delete Ticket",
+                    project_ticket_path(@project, @ticket),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" },
+                    class: "delete" %>
+      </li>
+    </ul>
   </header>
 
   <%= simple_format(@ticket.description) %>
