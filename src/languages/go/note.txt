@@ -1,2 +1,0 @@
-Go is the programming language that mainly focuses on "scaling".
-I can write super fast and effecient code without writing C or C++.
