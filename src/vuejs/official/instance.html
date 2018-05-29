@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <p>
+        {{ foo }}
+      </p>
+      <button v-on:click="foo = 'baz'">Change it!</button>
+    </div>
+
+    <div id="app2">
+      <p>
+        Alert hooks example!
+      </p>
+    </div>
+
+    <script>
+
+    var obj = {
+      foo: 'bar'
+    }
+
+    Object.freeze(obj)
+
+    app = new Vue({
+      el: '#app',
+      data: obj
+    })
+
+    app2 = new Vue({
+      el: '#app2',
+      created: function() {
+        alert("alert test")
+      }
+    })
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .red {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="changeTitle">Change Title</button>
+      <p>
+        {{ title }}
+      </p>
+    </div>
+
+    <div id="app2">
+      <input type="text" v-on:input="cssClass = $event.target.value" />
+      <p v-bind:class="cssClass">
+        class: {{ cssClass }}
+      </p>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          title: 'Hello world!'
+        },
+        methods: {
+          changeTitle() {
+            this.title = "Changed Title!!!"
+          }
+        }
+      })
+
+      new Vue({
+        el: "#app2",
+        data: {
+          cssClass: ''
+        }
+      })
+    </script>
+  </body>
+</html>
