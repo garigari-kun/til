@@ -25,3 +25,9 @@ https://information.rapid7.com/download-metasploitable-2017.html
 Boot from .vmdk file
 
 ## Set Victim(Windows) up
+
+Install
+https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/  
+
+
+## Take Snapshot(Backup)
