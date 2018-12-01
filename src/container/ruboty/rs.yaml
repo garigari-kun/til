@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ruboty
+  labels:
+    app: ruboty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ruboty
+  template:
+    metadata:
+      labels:
+        app: ruboty
+    spec:
+      containers:
+        - name: ruboty
+          image: "keisuketsukamoto/ruboty:v1"
+          imagePullPolicy: IfNotPresent
