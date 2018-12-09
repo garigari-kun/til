@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: ruboty
   labels:
@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
         - name: ruboty
-          image: "keisuketsukamoto/ruboty:v1"
+          image: asia.gcr.io/kube-test-224908/ruboty:latest
           imagePullPolicy: IfNotPresent
